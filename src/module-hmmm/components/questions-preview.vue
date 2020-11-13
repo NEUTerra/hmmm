@@ -27,19 +27,23 @@
         <div v-else>
           <el-row>单选题，以下选中的为正确答案</el-row>
           <el-row v-for="item in currentQuestion.options" :key="item.id">
-            <el-radio :value="currentQuestion.correct" :label="item.title"></el-radio>
+            <div><el-radio :value="currentQuestion.correct" :label="item.title"></el-radio></div>
+            <div style="margin-top: 20px" v-if="item.img"><img :src="item.img" class="choice-img" /></div>
           </el-row>
         </div>
       </div>
       <div v-else>
         <el-row>简答题，请参见答案解析</el-row>
       </div>
-      <el-row>
+      <el-row v-if="currentQuestion.videoURL">
         <el-button type="danger" @click="currentQuestion.videoShow = !currentQuestion.videoShow">{{
           currentQuestion.videoShow ? '收起解析视频' : '显示解析视频（这个视频插件好像需要鼠标点击一下才显示控制器）'
         }}</el-button>
       </el-row>
-      <vueMiniPlayer :video="currentQuestion.video" v-show="currentQuestion.videoShow" />
+      <el-row v-else>
+        <el-button type="info" disabled>没有可播放的视频解析</el-button>
+      </el-row>
+      <vueMiniPlayer :video="currentQuestion.video" v-if="currentQuestion.videoShow" />
       <el-divider></el-divider>
       <el-row>【答案解析】</el-row>
       <el-row v-html="currentQuestion.answer"></el-row>
@@ -161,6 +165,10 @@ export default {
         margin-bottom: 20px;
         p {
           margin: 0;
+        }
+        .choice-img {
+          max-width: 100px;
+          max-height: 100px;
         }
       }
       .el-divider {

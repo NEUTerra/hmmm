@@ -23,6 +23,13 @@ import hmmm from '@/module-hmmm/' // 黑马面面
 import vueMiniPlayer from 'vue-mini-player'
 import 'vue-mini-player/lib/vue-mini-player.css'
 
+import VueQuillEditor from 'vue-quill-editor'
+import 'quill/dist/quill.core.css'
+import 'quill/dist/quill.snow.css'
+import 'quill/dist/quill.bubble.css'
+
+Vue.use(VueQuillEditor /* { default global options } */)
+
 Vue.use(dashboard, store)
 Vue.use(base, store)
 // Vue.use(list, store)

@@ -29,7 +29,7 @@
           <el-col :span="6">
             <el-form-item label="标签" prop="tags">
               <el-select v-model="filterForm.tags">
-                <el-option v-for="item in tagsList" :key="item.value" :label="item.label" :value="item.value"> </el-option>
+                <el-option v-for="item in tagsList" :key="item.value" :label="item.label" :value="item.label"> </el-option>
               </el-select>
             </el-form-item>
           </el-col>
@@ -84,7 +84,14 @@
             <el-form-item label="城市">
               <el-col :span="11">
                 <el-form-item label-width="0" prop="province"
-                  ><el-select v-model="filterForm.province" @change="getCityList()"> <el-option v-for="(item, index) in provinceList" :key="index" :label="item" :value="item"> </el-option> </el-select
+                  ><el-select
+                    v-model="filterForm.province"
+                    @change="
+                      getCityList()
+                      filterForm.city = ''
+                    "
+                  >
+                    <el-option v-for="(item, index) in provinceList" :key="index" :label="item" :value="item"> </el-option> </el-select
                 ></el-form-item>
               </el-col>
               <el-col :span="11" :push="2">

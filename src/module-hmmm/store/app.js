@@ -16,7 +16,7 @@ const app = {
     }
   },
   actions: {
-    setName ({ commit }, userInfo) {
+    setName({ commit }, userInfo) {
       const username = userInfo.username.trim()
       return new Promise((resolve, reject) => {
         commit('SET_NAME', username)

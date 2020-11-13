@@ -52,7 +52,9 @@ export default [
         path: 'new/:id',
         component: _import('hmmm/pages/questions-new'),
         name: 'questions-edit',
-        meta: { title: '试题录入', noCache: true, icon: 'component' }
+        meta: { title: '试题修改', noCache: true, icon: 'component' },
+        props: true,
+        hidden: true
       },
       {
         path: 'randoms',

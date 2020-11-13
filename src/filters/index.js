@@ -155,3 +155,30 @@ export function parseQuestionType(num) {
   if (!num) return ''
   return questionType.find(item => item.value === parseInt(num)).label
 }
+
+export function parseChkState(chkState) {
+  switch (parseInt(chkState)) {
+    case 0:
+      return '待审核'
+    case 1:
+      return '通过'
+    case 2:
+      return '拒绝'
+    default:
+      return ''
+  }
+}
+
+export function parsePublishState(chkState, publishState) {
+  if (parseInt(chkState) === 0 || parseInt(chkState) === 2) {
+    return '待发布'
+  }
+  switch (parseInt(publishState)) {
+    case 0:
+      return '已下架'
+    case 1:
+      return '已上架'
+    default:
+      return ''
+  }
+}

@@ -52,16 +52,7 @@ export const questionType = [
 ]
 
 // 方向
-export const direction = [
-  'o2o',
-  '外包服务',
-  '企业服务',
-  '互联网金融',
-  '企业咨询',
-  '互联网',
-  '电子商务',
-  '其他'
-]
+export const direction = ['o2o', '外包服务', '企业服务', '互联网金融', '企业咨询', '互联网', '电子商务', '其他']
 
 // 精品审核
 export const chkType = [
