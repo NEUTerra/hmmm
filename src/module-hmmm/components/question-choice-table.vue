@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <el-alert :title="'数据一共' + total + '条'" type="info" effect="dark" style="margin-bottom: 20px"> </el-alert>
+    <el-alert :title="'数据一共' + total + '条。' + '注：后台接口貌似有问题，所有的查询条件里，只有subjectID有效果，其他的都没效果'" type="info" effect="dark" style="margin-bottom: 20px"> </el-alert>
     <el-table :data="questions" style="width: 100%">
       <el-table-column prop="number" label="试题编号" width="100"> </el-table-column>
       <el-table-column prop="subject" label="学科" width="80"> </el-table-column>
@@ -33,7 +33,7 @@
       <el-table-column prop="chkUser" label="审核人" width="150"></el-table-column>
       <el-table-column label="发布状态" width="150">
         <template slot-scope="scope">
-          {{ scope.row.publishState | parsePublishState }}
+          {{ scope.row.publishState | parsePublishState(scope.row.chkState) }}
         </template>
       </el-table-column>
       <el-table-column label="操作" fixed="right" width="200">

@@ -90,7 +90,16 @@ export default [
         path: 'tags',
         component: _import('hmmm/pages/tags'),
         name: 'subjects-tags',
-        meta: { title: '标签', noCache: true, icon: 'component' }
+        meta: { title: '标签', noCache: true, icon: 'component' },
+        props: route => {
+          if (route.query.subjectId) {
+            return {
+              subjectId: route.query.subjectId
+            }
+          } else {
+            return {}
+          }
+        }
       }
     ]
   },

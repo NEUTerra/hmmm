@@ -108,7 +108,14 @@
           </el-col>
         </el-row>
       </el-form>
-      <el-alert :title="'数据一共' + total + '条'" type="info" show-icon style="margin-bottom: 20px" :closable="false"> </el-alert>
+      <el-alert
+        :title="'数据一共' + total + '条。' + '注：后台接口貌似有问题，所有的查询条件里，只有subjectID有效果，其他的都没效果'"
+        type="info"
+        show-icon
+        style="margin-bottom: 20px"
+        :closable="false"
+      >
+      </el-alert>
       <el-table :data="questions" style="width: 100%">
         <el-table-column prop="number" label="试题编号" width="100"> </el-table-column>
         <el-table-column prop="subject" label="学科" width="80"> </el-table-column>

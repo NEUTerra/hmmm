@@ -169,7 +169,7 @@ export function parseChkState(chkState) {
   }
 }
 
-export function parsePublishState(chkState, publishState) {
+export function parsePublishState(publishState, chkState) {
   if (parseInt(chkState) === 0 || parseInt(chkState) === 2) {
     return '待发布'
   }

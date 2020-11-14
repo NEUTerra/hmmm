@@ -97,7 +97,6 @@
     ></articles-add>
     <articles-add
       v-if="addShow && !currentArticleId"
-      :id="currentArticleId"
       @close="
         addShow = false
         currentArticleId = null
@@ -175,12 +174,12 @@ export default {
             await changeState({ id: id, state: 1 - state })
           } catch (err) {
             console.log(err)
-            this.$message.error(state ? '禁用' : '启用' + '失败')
+            this.$message.error((state ? '禁用' : '启用') + '失败')
           }
           await this.getArticles()
           this.$message({
             type: 'success',
-            message: state ? '禁用' : '启用' + '成功!'
+            message: (state ? '禁用' : '启用') + '成功!'
           })
         })
         .catch(() => {

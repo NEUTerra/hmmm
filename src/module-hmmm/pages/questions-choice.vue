@@ -186,6 +186,7 @@ import QuestionPreview from '../components/questions-preview'
 import QuestionCheck from '../components/questions-check'
 // import { list as questionList, detail as questionDetail, remove as removeQuestion, choiceAdd as pickQuestion } from '@/api/hmmm/questions.js'
 export default {
+  name: 'QuestionChoice',
   created() {
     this.getSubjectList()
     this.getCreatorList()

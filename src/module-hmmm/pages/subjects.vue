@@ -1,11 +1,5 @@
 <template>
-  <div class="container">
-    <el-card shadow="never">
-      <div slot="header" class="clearfix">
-        <span>学科管理</span>
-      </div>
-    </el-card>
-  </div>
+  <div class="container">学科管理</div>
 </template>
 
 <script>

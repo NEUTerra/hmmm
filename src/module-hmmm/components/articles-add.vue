@@ -69,7 +69,6 @@ export default {
         this.addForm.articleBody = res.articleBody
         this.addForm.videoURL = res.videoURL
         console.log(this.addForm)
-        this.dialogVisible = true
       } catch (err) {
         console.log('获取文章详情失败！')
         this.$message.error('获取文章详情失败！')
