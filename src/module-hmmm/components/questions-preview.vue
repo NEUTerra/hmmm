@@ -118,6 +118,7 @@ export default {
       } catch (err) {
         console.log(err)
         this.$message.error('显示问题详情失败')
+        this.$emit('close')
       }
     },
     async getCatalogById(id) {

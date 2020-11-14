@@ -113,7 +113,7 @@
         <el-table-column prop="number" label="试题编号" width="100"> </el-table-column>
         <el-table-column prop="subject" label="学科" width="80"> </el-table-column>
         <el-table-column prop="catalog" label="目录" width="80"> </el-table-column>
-        <el-table-column prop="questionType" label="题型" width="80">
+        <el-table-column label="题型" width="80">
           <template slot-scope="scope">
             {{ scope.row.questionType | parseQuestionType }}
           </template>
